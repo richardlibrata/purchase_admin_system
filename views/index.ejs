@@ -1,0 +1,50 @@
+<% if (typeof errorMessage !== 'undefined') { %>
+  <div class="alert alert-danger">
+    <%= errorMessage %>
+  </div>
+<% } %>
+
+<h2>New Purchase</h2>
+<form action="/purchase" method="POST" class="row g-4 mb-4">
+  <div class="col-md-1">
+    <label class="form-label">Product:</label>
+    </div>
+    <div class="col-md-5">
+    <select name="productId" class="form-select" required>
+      <% products.forEach(p => { %>
+        <option value="<%= p.id %>"><%= p.name %></option>
+      <% }); %>
+    </select>
+  </div>
+
+  <div class="col-md-4">
+    <label>Quantity:</label>
+    <input type="number" name="quantity" required min="1" />
+  </div>
+  <div class="col-md-2 d-flex align-items-end">
+    <button type="submit" class="btn btn-success w-100">Submit</button>
+  </div>
+</form>
+
+<h2>Stock Levels</h2>
+<table class="table table-striped table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Product</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% 
+      const stockMap = {};
+      stocks.forEach(s => stockMap[s.product_id] = s.quantity);
+
+      products.forEach(p => {
+    %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= stockMap[p.id] || 0 %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

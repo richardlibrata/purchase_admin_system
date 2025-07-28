@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #d8f7fa
+}
+form {
+  margin-bottom: 1rem;
+}
+nav a {
+  margin-right: 10px;
+}
+button {
+  padding: 5px 10px;
+}
+
+table th, table td {
+  vertical-align: middle;
+}

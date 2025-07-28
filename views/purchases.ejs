@@ -1,0 +1,26 @@
+<h2>All Purchases</h2>
+<table class="table table-hover table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% purchases.forEach(p => { %>
+      <tr>
+        <td><%= p.productName %></td>
+        <td><%= p.quantity %></td>
+        <td><%= new Date(p.date).toLocaleString() %></td>
+        <td>
+          <form action="/purchase/<%= p.id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-sm btn-danger">Cancel</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
