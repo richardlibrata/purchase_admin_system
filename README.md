@@ -52,7 +52,7 @@ Open in your browser url localhost webserve
 
 To learn more about node.js and other related stuff, take a look at the following resources:
 
-- [XAMPP](https://www.apachefriends.org/) - 
+- [XAMPP](https://www.apachefriends.org/) - XAMPP Apache + MariaDB + PHP + Perl
 - [Node.js Menu](https://nodejs.org/en) - run JavaScript Everywhere.
 - [Express.js](https://expressjs.com/) - fast, unopinionated, minimalist web framework for Node.js.
 - [NPM](https://docs.npmjs.com/) - documentation for the npm registry, website, and command-line interface.
